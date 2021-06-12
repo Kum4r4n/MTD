@@ -8,10 +8,10 @@
 		<version>2.5.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.mtd</groupId>
-	<artifactId>MTD</artifactId>
+	<groupId>com.bcas</groupId>
+	<artifactId>mtd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MTD</name>
+	<name>mtd</name>
 	<description>Motorcycle Tour Demonstration Program</description>
 	<properties>
 		<java.version>11</java.version>
