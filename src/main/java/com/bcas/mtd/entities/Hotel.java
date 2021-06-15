@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table
 public class Hotel {
 
-    @Id
+    @Id  
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String Name;
