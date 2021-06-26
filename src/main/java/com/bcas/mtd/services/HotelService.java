@@ -53,6 +53,12 @@ public class HotelService implements IHotelService {
 
     }
 
+    /***
+     * Hotel update Service method
+     * @param hotelRequestModel
+     * @return
+     * @throws Exception
+     */
     public HotelResponseModel Update(HotelRequestModel hotelRequestModel) throws Exception {
 
         if(hotelRequestModel.getId() == null){

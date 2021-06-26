@@ -1,0 +1,11 @@
+com.bcas.mtd
+com.bcas.mtd.configurations
+com.bcas.mtd.constants
+com.bcas.mtd.controllers
+com.bcas.mtd.entities
+com.bcas.mtd.helper
+com.bcas.mtd.models.common
+com.bcas.mtd.models.request
+com.bcas.mtd.models.response
+com.bcas.mtd.repositories
+com.bcas.mtd.services
