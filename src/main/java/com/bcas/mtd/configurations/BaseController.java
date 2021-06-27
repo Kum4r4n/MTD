@@ -27,7 +27,7 @@ public class BaseController {
         return new ResponseEntity<Object>(result, HttpStatus.BAD_REQUEST);
     }
 
-    public ResponseEntity<Object> InterlServerError(Exception ex){
+    public ResponseEntity<Object> InternalServerError(Exception ex){
         Result result = new Result();
         result.setIsError(true);
         MError error = new MError();

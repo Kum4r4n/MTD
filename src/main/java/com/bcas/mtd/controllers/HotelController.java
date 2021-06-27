@@ -32,8 +32,9 @@ public class HotelController extends BaseController {
 
         }catch (Exception ex){
 
-            throw ex;
+            return InternalServerError(ex);
         }
+
     }
 
     @PostMapping
@@ -50,7 +51,7 @@ public class HotelController extends BaseController {
         }
         catch (Exception ex){
 
-            return InterlServerError(ex);
+            return InternalServerError(ex);
         }
 
     }
@@ -69,7 +70,7 @@ public class HotelController extends BaseController {
         }
         catch (Exception ex){
 
-            return InterlServerError(ex);
+            return InternalServerError(ex);
         }
 
     }
@@ -88,7 +89,7 @@ public class HotelController extends BaseController {
         }
         catch (Exception ex){
 
-            return InterlServerError(ex);
+            return InternalServerError(ex);
         }
 
     }
@@ -104,7 +105,7 @@ public class HotelController extends BaseController {
         }
         catch (Exception ex){
 
-            return InterlServerError(ex);
+            return InternalServerError(ex);
         }
 
     }
