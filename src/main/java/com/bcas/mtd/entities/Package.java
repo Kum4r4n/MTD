@@ -1,5 +1,8 @@
 package com.bcas.mtd.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -10,7 +13,8 @@ public class Package extends BaseEntity{
     private String name;
     private String address;
 
-    @ManyToMany
+
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "package_hotels",
             joinColumns = @JoinColumn(name = "package_id", nullable = false),
@@ -18,7 +22,7 @@ public class Package extends BaseEntity{
     )
     private Set<Hotel> hotels;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "package_actvities",
             joinColumns = @JoinColumn(name = "package_id", nullable = false),

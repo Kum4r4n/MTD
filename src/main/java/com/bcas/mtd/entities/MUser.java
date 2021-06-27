@@ -3,6 +3,7 @@ package com.bcas.mtd.entities;
 import com.bcas.mtd.helper.UserType;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.Set;
@@ -17,10 +18,10 @@ public class MUser extends BaseEntity {
     private String address;
     private int userType;
 
-    @OneToMany(mappedBy = "mUser")
+    @OneToMany(mappedBy = "mUser", fetch = FetchType.LAZY)
     private Set<Booking> bookings;
 
-    @OneToMany(mappedBy = "mUser")
+    @OneToMany(mappedBy = "mUser",fetch = FetchType.LAZY)
     private Set<PackageFeedback> packageFeedbacks;
 
     public MUser() {

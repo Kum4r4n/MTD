@@ -8,11 +8,11 @@ import javax.persistence.*;
 @Table
 public class PackageFeedback extends BaseEntity {
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mUser_id", nullable = false)
     private MUser mUser;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "package_id", nullable = false)
     private Package packages;
 
