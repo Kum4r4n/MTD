@@ -1,9 +1,11 @@
 package com.bcas.mtd.services;
 
+import com.bcas.mtd.configurations.BadRequestException;
 import com.bcas.mtd.configurations.Mapper;
 import com.bcas.mtd.entities.Activities;
 import com.bcas.mtd.entities.Hotel;
 import com.bcas.mtd.entities.Package;
+import com.bcas.mtd.models.request.HotelRequestModel;
 import com.bcas.mtd.models.request.PackageRequestModel;
 import com.bcas.mtd.models.response.HotelResponseModel;
 import com.bcas.mtd.models.response.PackageResponseModel;
@@ -51,5 +53,35 @@ public class PackageService implements  IPackageService{
         PackageResponseModel responseModel = _mapper.map(data, PackageResponseModel.class);
         return responseModel;
 
+    }
+
+    public PackageResponseModel Update(PackageRequestModel packageRequestModel) throws Exception {
+
+        if(packageRequestModel.getId() == null){
+            throw new BadRequestException("Id is must");
+        }
+
+        boolean isExist = _iPacakgeRepository.existsById(packageRequestModel.getId());
+        if (!isExist){
+            throw new BadRequestException("There are no hotel for requested id");
+        }
+
+       return Create(packageRequestModel);
+
+    }
+
+    public void Delelte(Long id) throws BadRequestException {
+        boolean isExist = _iPacakgeRepository.existsById(id);
+        if (!isExist){
+            throw new BadRequestException("There are no hotel for requested id");
+        }
+        _iPacakgeRepository.deleteById(id);
+    }
+
+    public PackageResponseModel Get(Long id){
+
+        var data = _iPacakgeRepository.findById(id);
+        PackageResponseModel responseModel = _mapper.map(data.get(), PackageResponseModel.class);
+        return responseModel;
     }
 }

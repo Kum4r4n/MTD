@@ -48,4 +48,58 @@ public class PackageController extends BaseController {
         }
 
     }
+
+    @PutMapping
+    public ResponseEntity<Object> Update(@RequestBody PackageRequestModel packageRequestModel){
+
+        try {
+
+            var result = _iPackageService.Update(packageRequestModel);
+            return Ok(result);
+
+        }
+        catch (BadRequestException ex){
+            return BadRequest(ex.getMessage());
+        }
+        catch (Exception ex){
+
+            return InternalServerError(ex);
+        }
+
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Object> Delete(@PathVariable Long id){
+
+        try {
+
+            _iPackageService.Delelte(id);
+            return Ok( null);
+
+        }
+        catch (BadRequestException ex){
+            return BadRequest(ex.getMessage());
+        }
+        catch (Exception ex){
+
+            return InternalServerError(ex);
+        }
+
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<Object> Get(@PathVariable Long id){
+
+        try {
+
+            var result = _iPackageService.Get(id);
+            return Ok( result);
+
+        }
+        catch (Exception ex){
+
+            return InternalServerError(ex);
+        }
+
+    }
 }

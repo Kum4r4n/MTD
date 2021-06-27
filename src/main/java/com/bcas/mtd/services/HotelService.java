@@ -32,7 +32,7 @@ public class HotelService implements IHotelService {
 
     public HotelResponseModel Get(Long id){
 
-        HotelResponseModel responseModel = _mapper.map(_iHotelRepository.findById(id), HotelResponseModel.class);
+        HotelResponseModel responseModel = _mapper.map(_iHotelRepository.findById(id).get(), HotelResponseModel.class);
         return responseModel;
     }
 

@@ -14,6 +14,7 @@ public class Booking extends BaseEntity {
     @JsonIgnore
     private Package packages;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mUser_id", nullable = false)
     @JsonIgnore

@@ -34,7 +34,7 @@ public class ActivitiesService implements IActivitiesService {
 
     public ActivityResponseModel Get(Long id){
 
-        ActivityResponseModel responseModel = _mapper.map(_iActivitiesRepository.findById(id), ActivityResponseModel.class);
+        ActivityResponseModel responseModel = _mapper.map(_iActivitiesRepository.findById(id).get(), ActivityResponseModel.class);
         return responseModel;
     }
 
